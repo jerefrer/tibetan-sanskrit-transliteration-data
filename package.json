@@ -1,0 +1,36 @@
+{
+  "name": "tibetan-sanskrit-transliteration-data",
+  "version": "0.1.0",
+  "description": "Shared replacement map data for transliterating Tibetan-encoded Sanskrit mantras",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "bump": "node bump-version.js",
+    "bump:patch": "node bump-version.js patch",
+    "bump:minor": "node bump-version.js minor",
+    "bump:major": "node bump-version.js major"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./replacements.csv": "./replacements.csv"
+  },
+  "files": [
+    "index.js",
+    "replacements.csv",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerefrer/tibetan-sanskrit-transliteration-data"
+  },
+  "keywords": [
+    "tibetan",
+    "sanskrit",
+    "transliteration",
+    "iast",
+    "phonetics",
+    "mantra"
+  ],
+  "author": "Padmakara",
+  "license": "MIT"
+}
