@@ -8,7 +8,7 @@ import csv
 from pathlib import Path
 from typing import List, Dict
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 _PACKAGE_DIR = Path(__file__).parent
 _CSV_PATH = _PACKAGE_DIR / "replacements.csv"
