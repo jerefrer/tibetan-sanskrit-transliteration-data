@@ -2,48 +2,19 @@
  * Tibetan Sanskrit Transliteration Data
  *
  * Provides the replacement map for transliterating Tibetan-encoded Sanskrit.
+ * This module works in both Node.js and browser environments.
  */
 
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { replacements } from "./data.js";
 
 /**
- * Load and parse the replacements CSV file.
+ * Load the replacements data.
  * @returns {Array<{tibetan: string, transliteration: string, phonetics: string}>}
  */
 export function loadReplacements() {
-  const csvPath = path.join(__dirname, "replacements.csv");
-  const content = fs.readFileSync(csvPath, "utf-8");
-
-  const lines = content.split("\n").filter((line) => line.trim());
-
-  return lines
-    .slice(1)
-    .map((line) => {
-      // Parse CSV with quoted fields: "value1","value2","value3"
-      const match = line.match(/^"([^"]*)","([^"]*)","([^"]*)"$/);
-      if (!match) {
-        return null;
-      }
-      return {
-        tibetan: match[1],
-        transliteration: match[2],
-        phonetics: match[3] || "",
-      };
-    })
-    .filter(Boolean);
+  return replacements;
 }
 
-/**
- * Get the path to the replacements CSV file.
- * @returns {string}
- */
-export function getReplacementsPath() {
-  return path.join(__dirname, "replacements.csv");
-}
+export { replacements };
 
-export default { loadReplacements, getReplacementsPath };
+export default { loadReplacements, replacements };

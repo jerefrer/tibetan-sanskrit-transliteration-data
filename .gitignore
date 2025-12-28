@@ -5,3 +5,4 @@ dist/
 build/
 .eggs/
 extract_csv.js
+data.js

@@ -33,17 +33,17 @@ The `replacements.csv` file contains three columns:
 ### JavaScript/Node.js
 
 ```javascript
-import {
-  loadReplacements,
-  getReplacementsPath,
-} from "tibetan-sanskrit-transliteration-data";
+import { loadReplacements } from "tibetan-sanskrit-transliteration-data";
 
-// Get parsed data
+// Get parsed data (works in both Node.js and browser)
 const replacements = loadReplacements();
+// Returns: [{ tibetan: "...", transliteration: "...", phonetics: "..." }, ...]
 
-// Or get the path to the CSV file
-const csvPath = getReplacementsPath();
+// You can also import the data directly
+import { replacements } from "tibetan-sanskrit-transliteration-data";
 ```
+
+**Note:** This package is compatible with both Node.js and browser environments (including Vite/Webpack builds).
 
 ### Python
 
